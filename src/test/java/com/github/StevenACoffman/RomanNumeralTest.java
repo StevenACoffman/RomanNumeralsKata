@@ -33,4 +33,10 @@ public class RomanNumeralTest {
         
     }
     
+    @Test
+    public void convertFromRomanNumeralToNumber() {
+        assertThat(RomanNumeral.calculate("I"), is(equalTo(1)));
+        
+    }
+    
 }
