@@ -14,6 +14,10 @@ public class RomanNumeral {
             result += "V";
             input -= 5;
         }
+        if (input >= 4) {
+            result += "IV";
+            input -= 4;
+        }
         
         result += repeat("I", input);
         

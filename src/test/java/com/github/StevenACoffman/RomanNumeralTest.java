@@ -14,10 +14,12 @@ public class RomanNumeralTest {
         // Then
         assertThat(RomanNumeral.calculate(1), is(equalTo("I")));
         assertThat(RomanNumeral.calculate(2), is(equalTo("II")));
+        assertThat(RomanNumeral.calculate(4), is(equalTo("IV")));
         assertThat(RomanNumeral.calculate(5), is(equalTo("V")));
         assertThat(RomanNumeral.calculate(6), is(equalTo("VI")));
         assertThat(RomanNumeral.calculate(10), is(equalTo("X")));
         assertThat(RomanNumeral.calculate(20), is(equalTo("XX")));
+        
     }
     
 }
