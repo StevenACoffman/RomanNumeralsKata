@@ -18,11 +18,13 @@ public class RomanNumeral {
     
     public static int calculate(String input) {
         int result = 0;
-        // JDK 8 will "abc".split("") -> "a","b","c" but JDK 7 will prefix an empty numericValue
-        String[] numerals = input.split("");
-        for (String numeral : numerals) {
-            result += RomanNumeralCharacter.valueOf(numeral).getNumericValue();
+        for (RomanNumeralCharacter romanNumeralCharacter : RomanNumeralCharacter.values()) {
+            while (input != null && !"".equals(input) && input.startsWith(romanNumeralCharacter.toString())) {
+                result += romanNumeralCharacter.getNumericValue();
+                input = input.substring(romanNumeralCharacter.toString().length());
+            }
         }
+        
         return result;
     }
     
