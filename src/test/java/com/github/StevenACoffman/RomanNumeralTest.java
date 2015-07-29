@@ -22,6 +22,9 @@ public class RomanNumeralTest {
         assertThat(RomanNumeral.calculate(40), is(equalTo("XL")));
         assertThat(RomanNumeral.calculate(50), is(equalTo("L")));
         assertThat(RomanNumeral.calculate(100), is(equalTo("C")));
+        assertThat(RomanNumeral.calculate(400), is(equalTo("CD")));
+        assertThat(RomanNumeral.calculate(500), is(equalTo("D")));
+        assertThat(RomanNumeral.calculate(1000), is(equalTo("M")));
         
     }
     

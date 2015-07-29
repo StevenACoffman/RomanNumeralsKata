@@ -3,6 +3,10 @@ package com.github.StevenACoffman;
 public enum RomanNumeralCharacter {
   
   //@formatter:off
+    M("M", 1000),
+    D("D", 500),
+    CD("CD", 400),
+    C("C", 100),
     L("L", 50),
     XL("XL",40),
     X("X", 10),
