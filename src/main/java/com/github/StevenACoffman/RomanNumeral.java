@@ -5,7 +5,7 @@ public class RomanNumeral {
     public static String calculate(int input) {
         String result = "";
         
-        if (input >= 10) {
+        while (input >= 10) {
             result += "X";
             input -= 10;
         }
