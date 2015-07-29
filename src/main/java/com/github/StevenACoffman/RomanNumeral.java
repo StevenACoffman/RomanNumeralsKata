@@ -19,13 +19,30 @@ public class RomanNumeral {
     public static int calculate(String input) {
         int result = 0;
         for (RomanNumeralCharacter romanNumeralCharacter : RomanNumeralCharacter.values()) {
-            while (input != null && !"".equals(input) && input.startsWith(romanNumeralCharacter.toString())) {
+            while (isNotBlank(input) && input.startsWith(romanNumeralCharacter.toString())) {
                 result += romanNumeralCharacter.getNumericValue();
-                input = input.substring(romanNumeralCharacter.toString().length());
+                input = removePrefix(input, romanNumeralCharacter);
             }
         }
         
         return result;
+    }
+
+    /**
+     * @param input
+     * @param romanNumeralCharacter
+     * @return
+     */
+    private static String removePrefix(String input, RomanNumeralCharacter romanNumeralCharacter) {
+        return input.substring(romanNumeralCharacter.toString().length());
+    }
+
+    /**
+     * @param input
+     * @return
+     */
+    private static boolean isNotBlank(String input) {
+        return input != null && !"".equals(input);
     }
     
     public enum RomanNumeralCharacter {
