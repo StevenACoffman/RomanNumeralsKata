@@ -14,6 +14,7 @@ public class RomanNumeralTest {
         // Then
         assertThat(RomanNumeral.calculate(1), is(equalTo("I")));
         assertThat(RomanNumeral.calculate(2), is(equalTo("II")));
+        assertThat(RomanNumeral.calculate(5), is(equalTo("V")));
     }
     
 }
