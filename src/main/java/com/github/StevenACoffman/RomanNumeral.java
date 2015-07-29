@@ -3,8 +3,13 @@ package com.github.StevenACoffman;
 public class RomanNumeral {
     
     public static String calculate(int input) {
-        // TODO: Make test pass
-        return null;
+        
+        return repeat("I", input);
+        
+    }
+    
+    private static String repeat(String repeated, int count) {
+        return new String(new char[count]).replace("\0", repeated);
     }
     
 }
