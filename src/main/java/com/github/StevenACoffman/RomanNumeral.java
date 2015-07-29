@@ -16,6 +16,11 @@ public class RomanNumeral {
         
     }
     
+    public static int calculate(String input) {
+        
+        return 1;
+    }
+    
     public enum RomanNumeralCharacter {
         
         //@formatter:off
