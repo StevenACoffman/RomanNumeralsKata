@@ -38,6 +38,23 @@ public class RomanNumeralTest {
         assertThat(RomanNumeral.calculate("I"), is(equalTo(1)));
         assertThat(RomanNumeral.calculate("II"), is(equalTo(2)));
         assertThat(RomanNumeral.calculate("IV"), is(equalTo(4)));
+        assertThat(RomanNumeral.calculate("V"), is(equalTo(5)));
+        assertThat(RomanNumeral.calculate("VI"), is(equalTo(6)));
+        assertThat(RomanNumeral.calculate("IX"), is(equalTo(9)));
+        assertThat(RomanNumeral.calculate("X"), is(equalTo(10)));
+        assertThat(RomanNumeral.calculate("XX"), is(equalTo(20)));
+        assertThat(RomanNumeral.calculate("XL"), is(equalTo(40)));
+        assertThat(RomanNumeral.calculate("L"), is(equalTo(50)));
+        assertThat(RomanNumeral.calculate("C"), is(equalTo(100)));
+        assertThat(RomanNumeral.calculate("CCVII"), is(equalTo(207)));
+        assertThat(RomanNumeral.calculate("CD"), is(equalTo(400)));
+        assertThat(RomanNumeral.calculate("D"), is(equalTo(500)));
+        assertThat(RomanNumeral.calculate("M"), is(equalTo(1000)));
+        
+        assertThat(RomanNumeral.calculate("MCMLIV"), is(equalTo(1954)));
+        assertThat(RomanNumeral.calculate("MCMXC"), is(equalTo(1990)));
+        assertThat(RomanNumeral.calculate("MMXV"), is(equalTo(2015)));
+        assertThat(RomanNumeral.calculate("MMMCMXCIX"), is(equalTo(3999)));
     }
     
 }
