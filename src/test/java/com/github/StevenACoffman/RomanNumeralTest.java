@@ -36,6 +36,7 @@ public class RomanNumeralTest {
     @Test
     public void convertFromRomanNumeralToNumber() {
         assertThat(RomanNumeral.calculate("I"), is(equalTo(1)));
+        assertThat(RomanNumeral.calculate("II"), is(equalTo(2)));
         
     }
     
