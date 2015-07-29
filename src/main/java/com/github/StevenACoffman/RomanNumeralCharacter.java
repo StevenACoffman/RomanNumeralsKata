@@ -4,6 +4,7 @@ public enum RomanNumeralCharacter {
   
   //@formatter:off
     L("L", 50),
+    XL("XL",40),
     X("X", 10),
     V("V", 5),
     IV("IV", 4),
