@@ -10,16 +10,18 @@ public class RomanNumeral {
             input -= 10;
         }
         
-        if (input >= 5) {
+        while (input >= 5) {
             result += "V";
             input -= 5;
         }
-        if (input >= 4) {
+        while (input >= 4) {
             result += "IV";
             input -= 4;
         }
-        
-        result += repeat("I", input);
+        while (input >= 1) {
+            result += "I";
+            input -= 1;
+        }
         
         return result;
         
