@@ -4,6 +4,12 @@ public class RomanNumeral {
     
     public static String calculate(int input) {
         String result = "";
+        
+        if (input >= 10) {
+            result += "X";
+            input -= 10;
+        }
+        
         if (input >= 5) {
             result += "V";
             input -= 5;
