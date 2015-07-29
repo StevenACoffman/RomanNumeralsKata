@@ -17,8 +17,13 @@ public class RomanNumeral {
     }
     
     public static int calculate(String input) {
-        
-        return 1;
+        int result = 0;
+        // JDK 8 will "abc".split("") -> "a","b","c" but JDK 7 will prefix an empty numericValue
+        String[] numerals = input.split("");
+        for (String numeral : numerals) {
+            result += RomanNumeralCharacter.valueOf(numeral).getNumericValue();
+        }
+        return result;
     }
     
     public enum RomanNumeralCharacter {
@@ -40,16 +45,16 @@ public class RomanNumeral {
         //@formatter:on
         
         private String character;
-        private int value;
+        private int numericValue;
         
         private RomanNumeralCharacter(String character, int value) {
             this.character = character;
-            this.value = value;
+            this.numericValue = value;
             
         }
         
         public int getNumericValue() {
-            return this.value;
+            return this.numericValue;
         }
         
         public String toString() {
