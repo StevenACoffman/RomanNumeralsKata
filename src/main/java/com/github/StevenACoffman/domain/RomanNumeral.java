@@ -1,8 +1,43 @@
-package com.github.StevenACoffman;
+package com.github.StevenACoffman.domain;
+
+import lombok.Getter;
 
 public class RomanNumeral {
+    @Getter
+    private int numericValue;
     
-    public static String calculate(int input) {
+    @Getter
+    private String roman;
+    
+    public RomanNumeral() {
+        numericValue = 0;
+        roman = "";
+    }
+    
+    public RomanNumeral(String input) {
+        if (isNumeric(input)) {
+            numericValue = Integer.parseInt(input);
+            roman = convertToRomanNumerals(numericValue);
+        } else {
+            roman = input;
+            numericValue = convertFromRomanNumerals(input);
+        }
+    }
+    
+    private boolean isNumeric(String str) {
+        for (char c : str.toCharArray()) {
+            if (!Character.isDigit(c))
+                return false;
+        }
+        return true;
+    }
+    
+    @Override
+    public String toString() {
+        return roman;
+    }
+    
+    public static String convertToRomanNumerals(int input) {
         String result = "";
         
         for (RomanNumeralCharacter romanNumeralCharacter : RomanNumeralCharacter.values()) {
@@ -11,12 +46,11 @@ public class RomanNumeral {
                 input -= romanNumeralCharacter.getNumericValue();
             }
         }
-        
         return result;
         
     }
     
-    public static int calculate(String input) {
+    public static int convertFromRomanNumerals(String input) {
         int result = 0;
         for (RomanNumeralCharacter romanNumeralCharacter : RomanNumeralCharacter.values()) {
             while (isNotBlank(input) && input.startsWith(romanNumeralCharacter.toString())) {
@@ -27,7 +61,7 @@ public class RomanNumeral {
         
         return result;
     }
-
+    
     /**
      * @param input
      * @param romanNumeralCharacter
@@ -36,7 +70,7 @@ public class RomanNumeral {
     private static String removePrefix(String input, RomanNumeralCharacter romanNumeralCharacter) {
         return input.substring(romanNumeralCharacter.toString().length());
     }
-
+    
     /**
      * @param input
      * @return
