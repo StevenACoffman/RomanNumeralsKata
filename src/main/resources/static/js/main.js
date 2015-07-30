@@ -30,6 +30,8 @@ function checkElementValidity() {
 $(document).ready(function () {
   'use strict';
   $('input,textarea').each(checkElementValidity);
-  $('input,textarea').bind('change', checkElementValidity);
+  $('input,textarea').bind('change keyup input invalid', checkElementValidity);
+  $('#romanInput').parent().find('.help-block').removeClass('hidden');
+  $('#romanInput').focus();
 });
 

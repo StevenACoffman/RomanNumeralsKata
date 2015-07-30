@@ -54,7 +54,7 @@
   <div class="container">
     <!-- Example row of columns -->
     <div class="row">
-      <form class="form-horizontal" name="romanNumeralForm" method="post" action="?" th:object="${romanNumeralForm}" val:validate="${romanNumeralForm}">
+      <form class="form-horizontal" name="romanNumeralForm" method="post" th:action="@{/}" th:object="${romanNumeralForm}" val:validate="${romanNumeralForm}">
         <fieldset>
 
           <!-- Form Name -->
@@ -64,7 +64,7 @@
           <div class="form-group">
             <label class="col-md-4 control-label " for="romanInput">Roman Numeral Input</label>
             <div class="col-md-4 ">
-              <input placeholder="roman numeral here " class="form-control input-md" th:field="*{romanInput}" />
+              <input placeholder="roman numeral here " class="form-control input-md" type="text" th:field="*{romanInput}" required="required" value="" aria-describedby="help-block" />
               <span class="glyphicon glyphicon-remove form-control-feedback hidden" aria-hidden="true"></span>
               <span class="help-block">Enter either roman numerals or arabic integers</span>
             </div>
